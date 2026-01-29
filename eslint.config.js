@@ -90,6 +90,10 @@ export default defineConfig([
     ...(jsxA11yFlatRecommendedObj || {}),
     settings: {
       react: { version: 'detect' },
+      // Enable TypeScript path resolution (works when using eslint-plugin-import + eslint-import-resolver-typescript)
+      'import/resolver': {
+        typescript: { project: './tsconfig.app.json' },
+      },
     },
     plugins: {
       ...reactFlatPluginsObj,
